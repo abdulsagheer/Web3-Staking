@@ -88,7 +88,6 @@ contract staking is ReentrancyGuard{
         }
         _;
     }
-    
     function getStaked(address account) public view returns(uint256){
         return s_balances[account];
     }
