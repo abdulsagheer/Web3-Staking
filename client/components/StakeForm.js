@@ -6,8 +6,8 @@ import { Form } from 'web3uikit';
 import { ethers } from 'ethers';
 
 function StakeForm() {
-  const stakingAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"; //replace this with the address where you have deployed your staking Smart Contract
-  const tesTokenAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"; //replace this with the address where you have deployed your Reward Token Smart Contract
+  const stakingAddress = "0xBfce8031ea3c15B127B2A97A762137248FeD0564"; //replace this with the address where you have deployed your staking Smart Contract
+  const tesTokenAddress = "0x8f21831978C7e2a65FA4c7715a2144aC5655468C"; //replace this with the address where you have deployed your Reward Token Smart Contract
 
   const { runContractFunction } = useWeb3Contract();
 
@@ -37,6 +37,9 @@ function StakeForm() {
         handleApproveSuccess(approveOptions.params.amount);
       }
     });
+
+    await tx.wait(0);
+
   }
 
   async function handleApproveSuccess(amountToStakeFormatted) {
